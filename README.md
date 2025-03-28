@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# EmployWise Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This React application integrates with the Reqres API to perform basic user management functions such as authentication, listing users, editing user details, and deleting users.
 
-## Available Scripts
+## Features
+### Level 1: Authentication Screen
+- Users can log in using credentials.
+- Authentication API: `POST /api/login`
+  - Email: `eve.holt@reqres.in`
+  - Password: `cityslicka`
+- On successful login, the token is stored, and the user is redirected to the Users List page.
 
-In the project directory, you can run:
+### Level 2: List All Users
+- Displays a paginated list of users.
+- Fetch users using: `GET /api/users?page=1`
+- Displays first name, last name, and avatar in a structured format.
+- Pagination or lazy loading is implemented.
 
-### `npm start`
+### Level 3: Edit, Delete, and Update Users
+- **Edit Users**:
+  - Opens a form pre-filled with user data.
+  - Allows updating first name, last name, and email.
+  - Uses `PUT /api/users/{id}`.
+- **Delete Users**:
+  - Removes a user from the list.
+  - Uses `DELETE /api/users/{id}`.
+- Success and error messages are displayed accordingly.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
+- **Frontend**: React.js
+- **State Management**: React Context API (Optional Redux)
+- **HTTP Requests**: Axios / Fetch API
+- **CSS Framework**: Tailwind CSS / Bootstrap / Custom CSS
+- **Routing**: React Router
+- **Storage**: Local Storage for token persistence
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Taniya0613/employwise-assignment.git
+   cd employwise-assignment
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the application:
+   ```sh
+   npm start
+   ```
 
-### `npm test`
+## Project Structure
+```
+/employwise-assignment
+│-- public/
+│-- src/
+│   ├── components/
+│   │   ├── Auth/
+│   │   │   ├── Login.jsx
+│   │   │   ├── Login.css
+│   │   ├── Users/
+│   │   │   ├── UserList.jsx
+│   │   │   ├── UserCard.jsx
+│   │   │   ├── EditUser.jsx
+│   │   │   ├── Users.css
+│   │   ├── Shared/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   ├── Alert.jsx
+│   │   │   ├── Loader.jsx
+│   ├── context/
+│   │   ├── AuthContext.js
+│   ├── services/
+│   │   ├── api.js
+│   ├── App.js
+│   ├── index.js
+│   ├── index.css
+│-- package.json
+│-- README.md
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API Endpoints Used
+- `POST /api/login` - User authentication
+- `GET /api/users?page=1` - Fetch users
+- `PUT /api/users/{id}` - Update user details
+- `DELETE /api/users/{id}` - Remove user
 
-### `npm run build`
+## Deployment
+- Hosted on [Heroku/Vercel/Netlify](your-deployment-link)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Bonus Features Implemented
+✔ Client-side search and filtering for users
+✔ React Router for navigation
+✔ Hosted on a free server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contribution
+Feel free to fork the repo and submit a pull request with any improvements!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
+This project is licensed under the MIT License.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### GitHub Repository Link
+[EmployWise Assignment GitHub Repo](https://github.com/Taniya0613/employwise-assignment)
